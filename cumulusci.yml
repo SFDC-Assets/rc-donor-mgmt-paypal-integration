@@ -1,0 +1,27 @@
+minimum_cumulusci_version: '3.42.0'
+project:
+    name: rc-donor-mgmt-paypal-integration
+    package:
+        name: rc-donor-mgmt-paypal-integration
+        api_version: '52.0'
+    dependencies:
+        - github: 'https://github.com/SalesforceFoundation/NPSP'
+        - github: 'https://github.com/SalesforceFoundation/Volunteers-for-Salesforce' 
+    git:
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/rc-donor-mgmt-paypal-integration/tests
+            options:
+                outputdir: robot/rc-donor-mgmt-paypal-integration/results
+
+    robot_testdoc:
+        options:
+            path: robot/rc-donor-mgmt-paypal-integration/tests
+            output: robot/rc-donor-mgmt-paypal-integration/doc/rc-donor-mgmt-paypal-integration_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
